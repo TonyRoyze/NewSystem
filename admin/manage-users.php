@@ -12,7 +12,9 @@ include "../connector.php";
 <body>
     <?php include "./nav.php"; ?>
     <div class="content">
-         <a href="user-create.php" class="submit">Add User</a>
+    <?php echo "
+        <a href='user-create.php?admin_id=$admin_id' class='submit'>Add User</a>
+        "; ?>
         <table class="table table-bordered table-striped">
             <thead>
             <tr>
@@ -24,9 +26,8 @@ include "../connector.php";
             </thead>
             <tbody>
             <?php
-            $sql = "SELECT * FROM user";
+            $sql = "SELECT * FROM user WHERE user_id != $admin_id";
             $result = $conn->query($sql);
-
             if (!$result) {
                 die("Invalid query" . $conn->connect_error);
             }
@@ -38,8 +39,8 @@ include "../connector.php";
                         <td>$row[pass]</td>
                         <td>$row[user_type]</td>
                         <td class='action'>
-                            <a href='./user-edit.php?user_id=$row[user_id]'>Edit</a>
-                            <a href='./user-delete.php?user_id=$row[user_id]'>Delete</a>
+                            <a href='./user-edit.php?user_id=$row[user_id]&admin_id=$admin_id'>Edit</a>
+                            <a href='./user-delete.php?user_id=$row[user_id]&admin_id=$admin_id'>Delete</a>
                         </td>
                     </tr>
                     ";

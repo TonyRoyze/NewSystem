@@ -17,7 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 );
                 exit();
             } elseif ($user_data["user_type"] == "WRITER") {
-                header("location: ./writer.php?writer_id=$user_data[user_id]");
+                header(
+                    "location: ./writer/writer.php?writer_id=$user_data[user_id]"
+                );
                 exit();
             }
         } else {
@@ -42,9 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="flex section">
             <form class="form" method="post">
                 <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#115DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-newspaper">
-                        <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
-                        <path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#115DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key-round">
+                        <path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/>
+                        <circle cx="16.5" cy="7.5" r=".5" fill="#115DFC"/>
                     </svg>
                 </div>
                 <div class="note">
@@ -53,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input placeholder="Enter your username" title="Enter your username" name="username" type="text" class="input_field">
                 <input placeholder="Enter your password" title="Enter your password" name="password" type="password" class="input_field">
                 <button class="submit">Submit</button>
-                <p class="p">Don\'t have an account? <a href="./signup.php"><span class="span">Sign Up</span></a>
+                <p class="p">Don't have an account? <a href="./signup.php"><span class="span">Sign Up</span></a>
             </form>
         </div>
     </div>

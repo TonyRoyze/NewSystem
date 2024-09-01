@@ -7,6 +7,7 @@ if (isset($_GET["user_id"])) {
     $sql = "DELETE FROM user WHERE user_id = '$user_id'";
     $conn->query($sql);
 
-    header("location: ./manage-users.php");
+    $admin_id = $_GET["admin_id"];
+    header("location: ./manage-users.php?admin_id=$admin_id");
     exit();
 }
