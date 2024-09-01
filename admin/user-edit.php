@@ -20,8 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "WHERE user_id = '$user_id'";
         $result = $conn->query($sql);
     }
-
-    header("location: ./manage-users.php");
+    $writer_id = $_GET["writer_id"];
+    header("location: ./manage-users.php?admin_id=$admin_id");
 }
 
 if (isset($_GET["user_id"])) {

@@ -12,7 +12,9 @@ include "../connector.php";
 <body>
     <?php include "./nav.php"; ?>
     <div class="content">
-        <a href="article-create.php" class="submit">Add Article</a>
+        <?php echo "
+            <a href='./article-create.php?admin_id=$admin_id' class='submit'>Add Article</a>
+            "; ?>
         <table class="table table-bordered table-striped">
             <thead>
             <tr>
@@ -27,6 +29,7 @@ include "../connector.php";
             <?php
             $sql = "SELECT * FROM articles";
             $result = $conn->query($sql);
+            $admin_id = $_GET["admin_id"];
 
             if (!$result) {
                 die("Invalid query" . $conn->connect_error);
@@ -41,8 +44,8 @@ include "../connector.php";
                         <td>$row[type]</td>
                         <td>$row[writer_id]</td>
                         <td class='action'>
-                            <a href='./edit-user.php?article_id=$row[article_id]'>Edit</a>
-                            <a href='./delete-user.php?article_id=$row[article_id]'>Delete</a>
+                            <a href='./article-edit.php?article_id=$row[article_id]&admin_id=$admin_id'>Edit</a>
+                            <a href='./article-delete.php?article_id=$row[article_id]&admin_id=$admin_id'>Delete</a>
                         </td>
                     </tr>
                     ";

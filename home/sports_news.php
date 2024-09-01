@@ -14,7 +14,6 @@ include "../connector.php";
 <body>
     <?php include "./nav.php"; ?>
     <div class="content">
-        <!-- Today's News Section -->
         <section class="news-section">
             <h2>Sports News</h2>
             <div class="news-grid">
@@ -24,7 +23,7 @@ include "../connector.php";
                 while ($row = $result->fetch_assoc()) {
                     echo "
                         <div class='card'>
-                            <img class='image' src='../images/article1.jpg'>
+                            <img class='image' src='../images/$row[img_name].jpg'>
                             <div class='article-content'>
                                 <span class='title'>$row[title]</span>
                                 <p class='desc'>$row[content]</p>

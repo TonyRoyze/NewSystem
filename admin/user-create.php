@@ -12,7 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $conn->query($sql);
     }
 
-    header("location: ./manage-users.php");
+    $admin_id = $_GET["admin_id"];
+    header("location: ./manage-users.php?admin_id=$admin_id");
 }
 ?>
 <!DOCTYPE html>
