@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Writer Panel</title>
-    <link rel="stylesheet" href="writer.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Online News</title>
+        <link rel="stylesheet" href="writer.css">
+    </head>
 <body>
     <div class="writer-panel">
         <!-- Profile Picture -->
@@ -19,7 +18,7 @@
         <div class="write-news">
             <button onclick="location.href='write-news.html'">
                 <i class="material-icons">create</i>
-                Write New News
+                New Article
             </button>
         </div>
 

@@ -1,3 +1,3 @@
 <?php
-header("location: /home/campus_news.php");
+header("location: ./home/campus_news.php");
 exit();
