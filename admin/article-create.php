@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </svg>
             </div>
             <div class="note">
-              <label class="title">Add New Article</label>
+              <label class="title">New Article</label>
             </div>
             <input placeholder="Enter title" title="Enter title" name="title" type="text" class="input_field" required>
             <input placeholder="Enter article type" title="Enter article type"  name="article_type" type="text" class="input_field" required>
