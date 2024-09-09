@@ -10,6 +10,7 @@ echo "
 <div class='sidebar'>
     <ul class='nav-links'>
         <li><a href='writer.php?writer_id=$writer_id'>Manage Articles</a></li>
+        <li><a href='help.php?writer_id=$writer_id'>Help</a></li>
         <li><a href='../login.php'>Logout</a></li>
     </ul>
     <div class='profile-card'>
