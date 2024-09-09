@@ -23,7 +23,7 @@ include "../connector.php";
                 while ($row = $result->fetch_assoc()) {
                     echo "
                         <div class='card'>
-                            <img class='image' src='../images/$row[img_name].jpg'>
+                            <img class='image' src='../images/$row[img_name]'>
                             <div class='article-content'>
                                 <span class='title'>$row[title]</span>
                                 <p class='desc'>$row[content]</p>
