@@ -6,17 +6,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $article_type = $_POST["article_type"];
     $file_name = $_FILES["img_name"]["name"];
     $temp_name = $_FILES["img_name"]["tmp_name"];
-    $folder = "../images/".$file_name;
+    $folder = "../images/" . $file_name;
 
     move_uploaded_file($temp_name, $folder);
-
 
     $content = $_POST["content"];
     $admin_id = $_GET["admin_id"];
 
-
     $sql = "INSERT INTO articles (title, type, img_name, content, writer_id) VALUES ('$title', '$article_type', '$file_name', '$content', $admin_id)";
-    print_r($sql);
     $result = $conn->query($sql);
 
     header("location: ./manage-news.php?admin_id=$admin_id");

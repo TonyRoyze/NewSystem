@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $file_name = $_FILES["img_name"]["name"];
     $temp_name = $_FILES["img_name"]["tmp_name"];
-    $folder = "../images/".$file_name;
+    $folder = "../images/" . $file_name;
     move_uploaded_file($temp_name, $folder);
 
     $sql =
@@ -65,16 +65,22 @@ if (isset($_GET["article_id"])) {
                 </svg>
             </div>
             <div class="note">
-              <label class="title">New Article</label>
+              <label class="title">Edit Article</label>
             </div>
             <input type="hidden" name="article_id" value="<?php echo $article_id; ?>">
             <input type="hidden" name="writer_id" value="<?php echo $writer_id; ?>">
             <input placeholder="Enter title" title="Enter title" name="title" type="text" class="input_field" value="<?php echo $title; ?>" required>
             <select name="article_type" class="input_field" required>
                 <option value="">Select Type</option>
-                <option value="CAM" <?php echo ($article_type == 'CAM') ? 'selected' : ''; ?>>Campus News</option>
-                <option value="EDU" <?php echo ($article_type == 'EDU') ? 'selected' : ''; ?>>Educational</option>
-                <option value="SPN" <?php echo ($article_type == 'SPN') ? 'selected' : ''; ?>>Sports News</option>
+                <option value="CAM" <?php echo $article_type == "CAM"
+                    ? "selected"
+                    : ""; ?>>Campus News</option>
+                <option value="EDU" <?php echo $article_type == "EDU"
+                    ? "selected"
+                    : ""; ?>>Educational</option>
+                <option value="SPN" <?php echo $article_type == "SPN"
+                    ? "selected"
+                    : ""; ?>>Sports News</option>
             </select>
             <textarea placeholder="Enter content" title="Enter content"  name="content" type="text" class="textarea_field" required><?php echo $content; ?></textarea>
             <div class="custom-file-upload-container">
@@ -89,7 +95,9 @@ if (isset($_GET["article_id"])) {
                     </div>
                     <input name="img_name" type="file" id="file" accept="image/*">
                 </label>
-                <img id="image-preview" src="../images/<?php echo $img_name; ?>" alt="Image preview" style="display: <?php echo $img_name ? 'block' : 'none'; ?>;">
+                <img id="image-preview" src="../images/<?php echo $img_name; ?>" alt="Image preview" style="display: <?php echo $img_name
+    ? "block"
+    : "none"; ?>;">
             </div>
             <button class="submit">Submit</button>
           </form>
